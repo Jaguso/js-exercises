@@ -7,17 +7,17 @@ Test.assertEquals(scramble('rkqodlw','world'),true);
 
 
 function scramble(str1, str2) {
-    var arr1 = str1.split('');
-    var arr2 = str2.split('');
-    // var l = []
+    let arr1 = str1.split('');
+    let arr2 = str2.split('');
+    var l = []
     while (arr1.includes(arr2[0]) ) {
         arr1.splice(arr1.indexOf(arr2[0]),1)
         arr2.slice(1, );
-        // l.push(arr1)
+        l.push(arr2);
     }
     return l;
 
-    // return arr2.length === 0 ? true : false;
+    // return arr2.length;
 }
 
 console.log(scramble('rkqodlw','world'));
