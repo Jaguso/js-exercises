@@ -9,7 +9,7 @@ function camelCase(str) {
     for(let i = 0; i < arr.length; i++) {
         final.push(arr[i][0].toUpperCase() + arr[i].slice(1,));
     }
-    return final.join('')
+    return final.join('');
 }
 
 camelCase('Milka corre LEJoss');

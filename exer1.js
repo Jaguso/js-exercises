@@ -5,22 +5,36 @@
 // example: 
 Test.assertEquals(scramble('rkqodlw','world'),true);
 
-
+//This solution works but is too slow
 function scramble(str1, str2) {
-    let arr1 = str1.split('');
-    let arr2 = str2.split('');
-    var l = []
+    var arr1 = str1.split('');
+    var arr2 = str2.split('');
     while (arr1.includes(arr2[0]) ) {
         arr1.splice(arr1.indexOf(arr2[0]),1)
-        arr2.slice(1, );
-        l.push(arr2);
+        arr2 = arr2.slice(1, );
     }
-    return l;
+    return arr2.length === 0 ? true : false
+};
+console.log(scramble('rkqodlw','world'));
 
-    // return arr2.length;
+
+function scramble(str1, str2) {
+    var arr1 = str1.split('');
+    var arr2 = str2.split('');
+
+    for(let i=0; i<arr2.length; i++) {
+
+    }
+
+    arr2.filter(elem => {
+
+    })
+
 }
 
-console.log(scramble('rkqodlw','world'));
+
+
+
 
 
 var str1 = 'rkqodlw';
