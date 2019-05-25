@@ -18,6 +18,7 @@ function scramble(str1, str2) {
 console.log(scramble('rkqodlw','world'));
 
 
+
 function scramble(str1, str2) {
     var arr1 = str1.split('');
     var arr2 = str2.split('');
