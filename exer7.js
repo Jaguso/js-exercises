@@ -9,7 +9,3 @@ function confirmEnding(str, target) {
 console.log(confirmEnding("Bastian", "n"));
 
 
-//the next returns the last 3 elements fo str
-var str = "somenting"
-var str2 = str.slice(-3,);
-console.log(str2);
