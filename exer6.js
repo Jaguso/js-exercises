@@ -3,7 +3,6 @@
 // contain exactly 4 sub-arrays.
 
 function largestOfFour(arr) {
-
     return arr.map(arrElem => (Math.max(...arrElem)));
 }
 
