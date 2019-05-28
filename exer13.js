@@ -5,7 +5,7 @@
 
 function destroyer(arr) {
     
-
+    arr.splice()
     return arr;
 }
 
