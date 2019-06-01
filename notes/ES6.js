@@ -79,3 +79,13 @@ const arr = [6, 89, 3, 45];
 const maximus = Math.max(...arr); // returns 89
 
 
+-------------------------------------------
+// Ésto 
+var voxel = {x: 2, y: 34, z: 46};
+const { x,y,z } = voxel;
+
+// Es lo mismo que 
+var voxel = {x: 3.6, y: 7.4, z: 6.54 };
+var x = voxel.x; 
+var y = voxel.y; 
+var z = voxel.z; 
