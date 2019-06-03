@@ -14,5 +14,16 @@ function mixedNumbers(arr) {
 
 console.log(mixedNumbers(['IV', 5, 'six']));
 
-----------------------
+-----------------------------------------
+.pop() quita el ultimo elemento 
+.shift() quita el primer elemento
 
+
+function popShift(arr) {
+    let popped = arr.pop(); // devuelve el elemento que quitamos
+    let shifted = arr.shift(); // devuelve el elemento que quitamos
+    return [shifted, popped];
+}
+
+console.log(popShift(['challenge', 'is', 'not', 'complete']));
+//logs: challenge complete
