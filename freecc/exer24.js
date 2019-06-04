@@ -9,12 +9,14 @@
 
 function myReplace(str, before, after) {
 
-    let arr = str.split(' ');
+    var arr = str.split(' ');
     for (let i=0; i<arr.length; i++) {
         if (arr[i] === before) {
-            before[0].toUpperCase === before[0] ? 
-            arr.splice(i, 1, after[0].toUpperCase() + after.slice(1,)) :
-            arr.splice(i, 1, after[0].toLowerCase() + after.slice(1,))
+            if (before[0].toUpperCase() === before[0]) {
+                arr.splice(i, 1, after[0].toUpperCase().concat(after.slice(1,))) 
+            } else {
+                arr.splice(i, 1, after[0].toLowerCase().concat(after.slice(1,)))
+            }
         }
     }
 
@@ -22,3 +24,8 @@ function myReplace(str, before, after) {
 }
 
 myReplace("He is Sleeping on the couch", "Sleeping", "sitting");
+
+
+var after = "jaime"
+var some = after[0].toUpperCase().concat(after.slice(1,));
+console.log(some);
