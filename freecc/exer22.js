@@ -15,35 +15,21 @@
 
 
 function translatePigLatin(str) {
-
-    str.split('').map(elem => {
-        if ('aeiou'.includes(elem)) {
-            str.indexOf(elem)
+    var arr = str.split('');
+    let aux = [];
+    for (let i=0; i<str.length; i++) {
+        if ('aeiou'.includes(str[i])) {
+            aux.push(i)
         }
-    })
-
-    if ('aeiou'.includes(str[0])) {
-        str = str + 'way'
-    } else {
-        str = str.slice(1, ) + str[0] + 'ay'
     }
-
-    return str;
+    let firstVowel = Math.min(...aux);
+    if (firstVowel === 0) {
+        return arr.join('') + 'way';
+    } else {
+        return arr.slice(firstVowel, ).join('') + arr.slice(0,firstVowel).join('') + 'ay'
+    }
 }
 
-console.log(translatePigLatin("consonant"));
-
-
-var str = 'sodijf';
-console.log(str.split('').map(elem => {
-    if ('aeiou'.includes(elem)) {
-        str.indexOf(elem)
-    }
-}))
-
-console.log(index);
-
-console.log(str.split('').map(elem => str.indexOf(elem)))
-console.log(str.indexOf('o'));
+console.log(translatePigLatin("eight"));
 
 
