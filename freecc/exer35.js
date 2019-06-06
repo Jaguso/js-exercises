@@ -17,10 +17,12 @@
 function sym(...args) {
     let final = [];
     for (let i=0; i<args.length; i++) {
+        args.splice(i,1,0)
         
     }
 
     return args;
 }
 
-sym([1, 2, 3], [5, 2, 1, 4]);
+console.log(sym([1, 2, 3], [5, 2, 1, 4]));
+
