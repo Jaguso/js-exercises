@@ -11,34 +11,67 @@ whatIsInAName([
     { first: "Romeo", last: "Montague" }, 
     { first: "Mercutio", last: null }, 
     { first: "Tybalt", last: "Capulet" }
-    ], 
-    { last: "Capulet" }) should return 
+    ], { last: "Capulet" }) 
+    should return 
     [{ first: "Tybalt", last: "Capulet" }].   
 
 
 
 function whatIsInAName(collection, source) {
-    let final = [];
-    for (let i=0; i<collection.length; i++) {
-        for (let key in collection[i]) {
-            if (collection[i][key] === source[key]) {
-                final.push(collection[i])
+
+    collection.filter(obj => {
+        let final = 1
+        for (let key in source) {
+            if (key in obj && source[key] === obj[key]) {
+                final = final * 1
+            } else {
+                final = final * 0
             }
         }
+        return final === 1 ? true : false;
+    })
 
-        // for (collection[i][param] in obj) {
-
-        // }
-    }  
-    return final;
-    // collection.filter(elem[0])
-    // var arr = [];
-    // return arr;
+    
 }
 
-whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
+console.log(whatIsInAName([
+    { first: "Romeo", last: "Montague" }, 
+    { first: "Mercutio", last: null }, 
+    { first: "Tybalt", last: "Capulet" }
+    ], 
+    { last: "Capulet" }
+));
+
+console.log(whatIsInAName([
+    { "apple": 1, "bat": 2 }, 
+    { "bat": 2 }, 
+    { "apple": 1, "bat": 2, "cookie": 2 }
+    ], 
+    { "apple": 1, "bat": 2 }
+));
 
 
-const arr = [{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }]
+ // let final = [];
+    // for (let i=0; i<collection.length; i++) {
+    //     for (let key in source) {
+    //         key in collection[i] 
+    //     }
+
+    
+
+    //     // for (let key in collection[i]) {
+    //     //     if (collection[i][key] === source[key]) {
+    //     //         final.push(collection[i])
+    //     //     }
+    //     // }
+
+    // }  
+
+
+const arr = [
+    { first: "Romeo", last: "Montague" }, 
+    { first: "Mercutio", last: null }, 
+    { first: "Tybalt", last: "Capulet" }
+]
 const {x: first} = arr[0]
 console.log(x);
