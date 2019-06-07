@@ -88,11 +88,9 @@ let foods = {
     plums: 28
 };
 
-// change code below this line
 foods.bananas = 13;
 foods.grapes = 35;
 foods['strawberries'] = 27;
-// change code above this line
 
 console.log(foods);
 
@@ -165,5 +163,28 @@ users.hasOwnProperty('Alan');
 'Alan' in users;
 // both return true
 
+// también se puede usar la segunda notacion de la siguiente 
+// manera
+
+function isEveryoneHere(obj) {
+    // change code below this line
+    if ('Alan', 'Jeff', 'Sarah', 'Ryan' in users) {
+      return true;
+    } else {
+      return false;
+    }
+    // change code above this line
+}
+
 -----------------------------
-  
+// For loop in an object
+
+for (let user in users) {
+    console.log(user);
+};
+
+// logs:
+Alan
+Jeff
+Sarah
+Ryan
