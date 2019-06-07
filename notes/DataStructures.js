@@ -61,3 +61,109 @@ let thisArray = ['sage', 'rosemary', 'parsley', 'thyme'];
 
 let thatArray = ['basil', 'cilantro', ...thisArray, 'coriander'];
 // thatArray now equals ['basil', 'cilantro', 'sage', 'rosemary', 'parsley', 'thyme', 'coriander']
+
+-----------------------------------------
+let FCC_User = {
+    username: 'awesome_coder',
+    followers: 572,
+    points: 1741,
+    completedProjects: 15
+};
+
+// dot notation
+let userData = FCC_User.followers;
+// userData equals 572
+
+// bracket notation
+// OBS: tenemos que usar quotes
+let userData = FCC_User['followers']
+// userData equals 572
+
+//también podemos usar ambas notaciones para agregar elementos
+// a un objeto
+//EXAMPLE
+let foods = {
+    apples: 25,
+    oranges: 32,
+    plums: 28
+};
+
+// change code below this line
+foods.bananas = 13;
+foods.grapes = 35;
+foods['strawberries'] = 27;
+// change code above this line
+
+console.log(foods);
+
+-----------------------------------
+// misma notación para modificar elementos de un objeto
+
+let userActivity = {
+    id: 23894201352,
+    date: 'January 1, 2017',
+    data: {
+      totalUsers: 51,
+      online: 42
+    }
+};
+
+//los siguientes dos son notaciones que hacen lo mismo
+userActivity['data']['online'] = 45;
+userActivity.data.online = 45;
+
+console.log(userActivity);
+
+---------------------------------
+// OBS: con la bracket notation podemos acceder a keys que 
+// dependan de una variable (en este caso scannedItem)
+let foods = {
+    apples: 25,
+    oranges: 32,
+    plums: 28,
+    bananas: 13,
+    grapes: 35,
+    strawberries: 27
+};
+// do not change code above this line
+
+function checkInventory(scannedItem) {
+// change code below this line
+return foods[scannedItem]
+}
+
+// change code below this line to test different cases:
+console.log(checkInventory("apples"));
+//logs 25
+
+----------------------------
+// Podemos borrar un key: value con la siguiente notación 
+delete foods.apples;
+
+-----------------------------
+let users = {
+    Alan: {
+      age: 27,
+      online: true
+    },
+    Jeff: {
+      age: 32,
+      online: true
+    },
+    Sarah: {
+      age: 48,
+      online: true
+    },
+    Ryan: {
+      age: 19,
+      online: true
+    }
+};
+
+// damos dos formas de checar si 'Alan' es un key del objeto users
+users.hasOwnProperty('Alan');
+'Alan' in users;
+// both return true
+
+-----------------------------
+  
