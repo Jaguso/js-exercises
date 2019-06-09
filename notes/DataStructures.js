@@ -190,7 +190,7 @@ Sarah
 Ryan
 
 -----------------------------
-// Un ejemplo mas complicado
+*// Un ejemplo mas complicado
 // IMPORTANTE
 let users = {
     Alan: {

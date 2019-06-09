@@ -104,3 +104,33 @@ Bird.prototype = {
       console.log("My name is " + this.name);
     }
 };
+
+--------------------------------------
+// Al añadir propiedades tipo prototype como objeto, tenemos que 
+// decir el constructor del que vienen
+// ejem:
+
+Bird.prototype = {
+    constructor: Bird, // define the constructor property
+    numLegs: 2,
+    eat: function() {
+      console.log("nom nom nom");
+    },
+    describe: function() {
+      console.log("My name is " + this.name); 
+    }
+};
+
+-----------------------------------------
+*// Otra forma de crear un instance
+let animal = Object.create(Animal.prototype);
+// es lo mismo que
+let animal = new Animal();
+
+----------------------------------------
+*// Así usamos inheritance para que Bird herede las propiedades 
+// de Animal (ejemplo eat)
+Bird.prototype = Object.create(Animal.prototype);
+let duck = new Bird("Donald");
+duck.eat(); // prints "nom nom nom"
+
