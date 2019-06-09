@@ -128,9 +128,44 @@ let animal = Object.create(Animal.prototype);
 let animal = new Animal();
 
 ----------------------------------------
-*// Así usamos inheritance para que Bird herede las propiedades 
+*// Así usamos 'inheritance' para que Bird herede las propiedades 
 // de Animal (ejemplo eat)
 Bird.prototype = Object.create(Animal.prototype);
 let duck = new Bird("Donald");
 duck.eat(); // prints "nom nom nom"
 
+// OBS: Antes tenemos que crear el constructor Bird y Animal
+// EJEMPLO (completo)
+
+function Animal() { }
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function() {
+    console.log("nom nom nom");
+  }
+};
+
+function Dog() { }
+
+// Add your code below this line
+Dog.prototype = Object.create(Animal.prototype)
+
+let beagle = new Dog();
+beagle.eat();  // Should print "nom nom nom"
+
+----------------------------------
+
+When an object inherits its prototype from another object, 
+it also inherits the supertype's constructor property.
+
+Here's an example:
+
+function Bird() { }
+Bird.prototype = Object.create(Animal.prototype);
+let duck = new Bird();
+duck.constructor // function Animal(){...}
+But duck and all instances of Bird should show that they were constructed by Bird and not Animal. To do so, you can manually set Bird's constructor property to the Bird object:
+
+Bird.prototype.constructor = Bird;
+duck.constructor // function Bird(){...}
