@@ -100,9 +100,88 @@ var y = voxel.y;
 var z = voxel.z; 
 
 
-console.log(Math.min(2,3,43,1));
+// If instead you want to store the values of voxel.x into a, 
+// voxel.y into b, and voxel.z into c, you have that freedom as well.
+const { x : a, y : b, z : c } = voxel // a = 3.6, b = 7.4, c = 6.54
+
+// You may read it as "get the field x and copy the value into a," 
+// and so on.
 
 
-let arr1 = [1,2,3,4,2,1];
-let arr2 = [...arr1];
-console.log(arr2);
+------------------------------------
+// Destructuring an array
+const [a, b] = [1, 2, 3, 4, 5, 6];
+console.log(a, b); // 1, 2
+
+const [a, b,,, c] = [1, 2, 3, 4, 5, 6];
+console.log(a, b, c); // 1, 2, 5
+
+----------------------------------
+// The result is similar to Array.prototype.slice(), as shown below:
+
+const [a, b, ...arr] = [1, 2, 3, 4, 5, 7];
+console.log(a, b); // 1, 2
+console.log(arr); // [3, 4, 5, 7]
+
+// OBS: The rest element only works correctly as the last 
+// variable in the list. As in, you cannot use the rest operator 
+// to catch a subarray that leaves out last element of the original 
+// array.
+
+// EXAMPLE 
+// La siguiente función es como un slice que quita los primeros dos
+// elementos del array de entrada
+const source = [1,2,3,4,5,6,7,8,9,10];
+function removeFirstTwo(list) {
+  "use strict";
+  const [a,b, ...arr] = list;
+  return arr;
+}
+const arr = removeFirstTwo(source);
+console.log(arr); // should be [3,4,5,6,7,8,9,10]
+console.log(source); // should be [1,2,3,4,5,6,7,8,9,10];
+
+
+---------------------------------
+// esto 
+const profileUpdate = (profileData) => {
+    const { name, age, nationality, location } = profileData;
+    // do something with these variables
+}
+
+// es lo mismo que esto
+const profileUpdate = ({ name, age, nationality, location }) => {
+    /* do something with these fields */
+}
+
+--------------------------------------
+// getMousePosition is a simple function that returns an object 
+// containing two fields.
+
+const getMousePosition = (x, y) => ({
+    x: x,
+    y: y
+});
+
+// Here is the same function from above rewritten to use this new 
+// syntax:
+
+const getMousePosition = (x, y) => ({ x, y });
+
+-----------------------------------
+// Definir una función dentro de un objeto en ES5:
+const person = {
+    name: "Taylor",
+    sayHello: function() {
+      return `Hello! My name is ${this.name}.`;
+    }
+};
+
+// Definir una función dentro de un objeto en ES6:
+const person = {
+    name: "Taylor",
+    sayHello() {
+      return `Hello! My name is ${this.name}.`;
+    }
+};
+
