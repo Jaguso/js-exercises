@@ -185,3 +185,125 @@ const person = {
     }
 };
 
+-------------------------------------------
+// Notación usual (funcional) para un constructor
+var SpaceShuttle = function(targetPlanet){
+    this.targetPlanet = targetPlanet;
+}
+var zeus = new SpaceShuttle('Jupiter');
+
+
+// Notación con 'class'
+class SpaceShuttle {
+    constructor(targetPlanet){
+      this.targetPlanet = targetPlanet;
+    }
+}
+const zeus = new SpaceShuttle('Jupiter');
+
+-----------------------------------------
+// Getters and setters
+// EXAMPLE
+class Book {
+    constructor(author) {
+      this._author = author;
+    }
+    // getter
+    get writer(){
+      return this._author;
+    }
+    // setter
+    set writer(updatedAuthor){
+      this._author = updatedAuthor;
+    }
+}
+const lol = new Book('anonymous');
+console.log(lol.writer);  // anonymous
+lol.writer = 'wut';
+console.log(lol.writer);  // wut
+
+
+// EXAMPLE 2
+function makeClass() {
+    "use strict";
+    /* Alter code below this line */
+    class Thermostat {
+      constructor(temp) {
+        this._temp = temp;
+      }
+  
+      get temperature() {
+        return (this._temp-32) * 5/9;
+      }
+  
+      set temperature(temp) {
+        this._temp = temp;
+  
+      }
+    }
+    /* Alter code above this line */
+    return Thermostat;
+}
+
+const Thermostat = makeClass();
+const thermos = new Thermostat(76); // setting in Fahrenheit scale
+let temp = thermos.temperature; // 24.44 in C
+thermos.temperature = 26;
+temp = thermos.temperature; // 26 in C
+
+----------------------------
+// Notación para importar una sola funcion o variable
+import { function } from "file_path_goes_here"
+// We can also import variables the same way!
+
+----------------------------
+// Para que una funcion o variable se pueda importar, tenemos que
+// exportarla de su origen
+
+// esta es una forma de hacerlo
+const capitalizeString = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+export { capitalizeString } //How to export functions.
+export const foo = "bar"; //How to export variables.
+
+
+// otra forma de hacerlo
+const capitalizeString = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+const foo = "bar";
+export { capitalizeString, foo }
+
+----------------------------
+// Usamos * para importar todo de un archivo
+
+// EXAMPLE
+import * as myMathModule from "math_functions";
+myMathModule.add(2,3);
+myMathModule.subtract(5,3);
+
+// en general: 
+import * as object_with_name_of_your_choice from "file_path_goes_here"
+object_with_name_of_your_choice.imported_function
+
+
+---------------------------
+// Usamos 'export default' si queremos exportar solo un valor del
+// file
+export default function add(x,y) {
+    return x + y;
+}
+
+// OBS: Since export default is used to declare a fallback value 
+// for a module or file, you can only have one value be a default 
+// export in each module or file. Additionally, you cannot use 
+// export default with var, let, or const
+
+--------------------------
+// Para importar algo exportado con export default no necesitamos
+// paréntesis
+
+// EXAMPLE
+import add from "math_functions";
+add(5,4); //Will return 9
