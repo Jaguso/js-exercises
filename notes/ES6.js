@@ -78,8 +78,17 @@ console.log(howMany("string", null, [1, 2, 3], { })); // You have passed 4 argum
 const arr = [6, 89, 3, 45];
 const maximus = Math.max(...arr); // returns 89
 
+// otra forma de hacerlo es la siguiente
+var arr = [6, 89, 3, 45];
+var maximus = Math.max.apply(null, arr); // returns 89
+
+// con ésto podemos usar un spread operator para copiar un array
+let arr1 = [1,2,3,4,2,1];
+let arr2 = [...arr1];
+console.log(arr2); // prints [1,2,3,4,2,1]
 
 -------------------------------------------
+// Destructuring (to asign variables from objects)
 // Ésto 
 var voxel = {x: 2, y: 34, z: 46};
 const { x,y,z } = voxel;
@@ -89,3 +98,11 @@ var voxel = {x: 3.6, y: 7.4, z: 6.54 };
 var x = voxel.x; 
 var y = voxel.y; 
 var z = voxel.z; 
+
+
+console.log(Math.min(2,3,43,1));
+
+
+let arr1 = [1,2,3,4,2,1];
+let arr2 = [...arr1];
+console.log(arr2);
