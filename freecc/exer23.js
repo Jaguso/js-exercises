@@ -7,28 +7,46 @@
 
 
 function spinalCase(str) {
-    var final = []
-    str.split('');
-    for (let i =1; i<str.length; i++) {
-        if (str[i] === str[i].toUpperCase()) {
-            ' -_'.includes(str[i-1]) ? 
-            
-        }
+    let final = [];
+    for (let i=0; i<str.length; i++) {
+        if ()
     }
 
+    if (str.includes(' ') || str.includes('-') || str.includes('_')) {
+        
+    }
+    for (let i=0; i<str.length; i++) {
+        if (' -_'.includes(str[i]))
+    }
+    
+}
 
 
-    // var filterStr = str.split('').filter(elem => !' -_'.includes(elem))
 
-    // if(str.split('') === filterStr) {
-    //     return 'like'
-    // } else {
-    //     let newStr =  str.toLowerCase().split('').map(char => {
-    //         return 'abcdefghijklmnopqrstuvwxyx'.includes(char) ? char : '-';
-    //     }).join('');
-    //     return newStr;
-    // }
+var str = 'sodfj';
+str.split(' ')
 
+
+var final = []
+str.split('');
+for (let i =1; i<str.length; i++) {
+    if (str[i] === str[i].toUpperCase()) {
+        return ' -_'.includes(str[i-1]) ? 
+        
+    }
+}
+
+
+
+var filterStr = str.split('').filter(elem => !' -_'.includes(elem))
+
+if(str.split('') === filterStr) {
+    return 'like'
+} else {
+    let newStr =  str.toLowerCase().split('').map(char => {
+        return 'abcdefghijklmnopqrstuvwxyx'.includes(char) ? char : '-';
+    }).join('');
+    return newStr;
 }
 
 console.log(spinalCase('TheAndy-Griffith_Show'));
