@@ -1,4 +1,4 @@
-// Make a function that looks through an array of objects 
+Solved// Make a function that looks through an array of objects 
 // (first argument) and returns an array of all objects 
 // that have matching name and value pairs (second argument).
 // Each name and value pair of the source object has to be 
@@ -18,20 +18,17 @@ whatIsInAName([
 
 
 function whatIsInAName(collection, source) {
-
-    collection.filter(obj => {
-        let final = 1
-        for (let key in source) {
-            if (key in obj && source[key] === obj[key]) {
-                final = final * 1
-            } else {
-                final = final * 0
-            }
-        }
-        return final === 1 ? true : false;
-    })
-
     
+    return collection.filter(obj => {
+        let final = 0;
+        for (let key in source) {
+            if (key in obj && obj[key] === source[key]) {
+                final = final + 1
+            }
+
+        }
+        return final === Object.keys(source).length ? true : false;
+    })    
 }
 
 console.log(whatIsInAName([
@@ -51,27 +48,15 @@ console.log(whatIsInAName([
 ));
 
 
- // let final = [];
-    // for (let i=0; i<collection.length; i++) {
-    //     for (let key in source) {
-    //         key in collection[i] 
-    //     }
+var animals = {
+    cat: "milk",
+    dog: "juskua"
+}
 
-    
+for (key in animals){
+    console.log(key in animals)
+}
 
-    //     // for (let key in collection[i]) {
-    //     //     if (collection[i][key] === source[key]) {
-    //     //         final.push(collection[i])
-    //     //     }
-    //     // }
+console.log(Object.keys(animals).length);
+console.log('cat' in animals)
 
-    // }  
-
-
-const arr = [
-    { first: "Romeo", last: "Montague" }, 
-    { first: "Mercutio", last: null }, 
-    { first: "Tybalt", last: "Capulet" }
-]
-const {x: first} = arr[0]
-console.log(x);

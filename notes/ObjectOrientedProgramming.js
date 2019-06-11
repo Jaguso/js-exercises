@@ -156,10 +156,10 @@ beagle.eat();  // Should print "nom nom nom"
 
 ----------------------------------
 // Podemos cambiar el constructor del que proviene un instance
-When an object inherits its prototype from another object, 
-it also inherits the supertype's constructor property.
+// When an object inherits its prototype from another object, 
+// it also inherits the supertype's constructor property.
 
-Here's an example:
+// Here's an example:
 
 function Bird() { }
 Bird.prototype = Object.create(Animal.prototype);
@@ -172,12 +172,13 @@ duck.constructor // function Bird(){...}
 
 -----------------------------------
 // Podemos agregar methods unicos a un constructor heredado de otro
-A constructor function that inherits its prototype object from 
-a supertype constructor function can still have its own methods 
-in addition to inherited methods.
 
-For example, Bird is a constructor that inherits its prototype 
-from Animal:
+// A constructor function that inherits its prototype object from 
+// a supertype constructor function can still have its own methods 
+// in addition to inherited methods.
+
+// For example, Bird is a constructor that inherits its prototype 
+// from Animal:
 
 function Animal() { }
 Animal.prototype.eat = function() {
@@ -186,12 +187,12 @@ Animal.prototype.eat = function() {
 function Bird() { }
 Bird.prototype = Object.create(Animal.prototype);
 Bird.prototype.constructor = Bird;
-In addition to what is inherited from Animal, you want to add behavior that is unique to Bird objects. Here, Bird will get a fly() function. Functions are added to Bird's prototype the same way as any constructor function:
+// In addition to what is inherited from Animal, you want to add behavior that is unique to Bird objects. Here, Bird will get a fly() function. Functions are added to Bird's prototype the same way as any constructor function:
 
 Bird.prototype.fly = function() {
   console.log("I'm flying!");
 };
-Now instances of Bird will have both eat() and fly() methods:
+// Now instances of Bird will have both eat() and fly() methods:
 
 let duck = new Bird();
 duck.eat(); // prints "nom nom nom"
