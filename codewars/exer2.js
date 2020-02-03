@@ -10,8 +10,8 @@
 findMissing([1, 3, 5, 9, 11]) == 7
 
 function findMissing(list) {  
-  let sum = ((list[0] + list[list.length-1]) / 2) * (list.length+1);
-  let elemsSum = 0
+  let sum = ((list[0] + list[list.length - 1]) / 2) * (list.length + 1);
+  let elemsSum = 0;
   for (let i=0; i<list.length; i++) {
     elemsSum = elemsSum + list[i];
   }
