@@ -13,9 +13,12 @@ formatDuration(3662)  // returns "1 hour, 1 minute and 2 seconds"
 // Note that spaces are important.
 
 function formatDuration (seconds) {
+  let arr = []
   if (seconds === 0) {
     return now;
   } else {
-    
+    if (seconds >= 31536000) {
+      arr.push(seconds % 31536000)
+    } if (secoonds < 31536000)
   }
 }
